@@ -22,9 +22,15 @@ endif()
 
 find_package(OpenMP COMPONENTS CXX)
 
-set(SOURCES main.cpp our_gl.cpp model.cpp tgaimage.cpp)
+set(SOURCES
+    src/main.cpp
+    src/our_gl.cpp
+    src/model.cpp
+    src/tgaimage.cpp
+)
 
 add_executable(${PROJECT_NAME} ${SOURCES})
+target_include_directories(${PROJECT_NAME} PRIVATE include)
 target_link_libraries(${PROJECT_NAME} PRIVATE $<$<BOOL:${OpenMP_CXX_FOUND}>:OpenMP::OpenMP_CXX>)
 
 file(GENERATE OUTPUT .gitignore CONTENT "*")
