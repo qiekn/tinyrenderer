@@ -1,5 +1,7 @@
 # Software rendering in 500 lines of bare C++
 
+[my notes](https://qiekn.notion.site/tinyrenderer)
+
 The code itself is of little interest. Check the course notes:
 1. [Introduction](https://haqr.eu/tinyrenderer/)
 2. [Bresenham’s line drawing algorithm](https://haqr.eu/tinyrenderer/bresenham/)
@@ -92,10 +94,10 @@ It produces the 64x64 image `framebuffer.tga`, here I scaled it for better reada
 ## Compilation
 
 ```sh
-git clone https://github.com/ssloy/tinyrenderer.git &&
+git clone https://github.com/qiekn/tinyrenderer.git &&
 cd tinyrenderer &&
 cmake -Bbuild &&
 cmake --build build -j &&
-build/tinyrenderer obj/diablo3_pose/diablo3_pose.obj obj/floor.obj
+build/tinyrenderer assets/diablo3_pose/diablo3_pose.obj assets/floor.obj
 ```
 The rendered image is saved to `framebuffer.tga`.
